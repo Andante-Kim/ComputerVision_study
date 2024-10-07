@@ -10,8 +10,14 @@ print("Selected ROI:", x, y, w, h)
 
 roi = img[y:y+h, x:x+w]	# 선택한 영역만 잘라냄
 
-blur_roi = cv2.blur(roi,(15,15)) # 블러 효과
-img[y:y+h, x:x+w] = blur_roi
+# mosaic - 3-2 smoothing
+#blur_roi = cv2.blur(roi,(15,15)) # 블러 효과
+#img[y:y+h, x:x+w] = blur_roi
+
+# mosaic - 3-3 resize
+resize_roi = cv2.resize(roi, (w//15,h//15))
+resize_roi = cv2.resize(resize_roi, (w,h), interpolation=cv2.INTER_NEAREST)
+img[y:y+h, x:x+w] = resize_roi
 
 #cv2.imwrite('roi.jpg', roi)	# 잘라낸 영역을 저장
 
