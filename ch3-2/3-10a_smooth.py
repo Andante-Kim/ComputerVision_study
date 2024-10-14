@@ -16,7 +16,7 @@ average2 = cv2.blur(gray,(3,3))
 
 #2 다양한 크기의 스무딩 필터
 smooth=np.hstack((gray,cv2.blur(gray,(3,3),0.0),cv2.blur(gray,(7,7),0.0),cv2.blur(gray,(11,11),0.0),cv2.blur(gray,(15,15),0.0)))
-#cv2.imshow('Smooth',smooth)
+cv2.imshow('Smooth',smooth)
 
 #3 Gaussian
 blur5 = cv2.blur(gray, (5,5), 0.0)
