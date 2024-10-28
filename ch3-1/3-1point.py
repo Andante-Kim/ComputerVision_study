@@ -8,7 +8,7 @@ if img is None:
     sys.exit('파일을 찾을 수 없습니다.')
 
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY) # BGR 컬러 영상을 명암 영상으로 변환하여 저장
-#cv2.imshow('original image - gray',gray)
+cv2.imshow('original image - gray',gray)
 
 #2 사칙연산 -> 단순한 수식은 결과가 제대로 나오지 않음
 img_plus = gray + 50       # y = x + 50
@@ -51,8 +51,8 @@ pp4=np.hstack((img_plus3, img_minus3, img_multi3, img_div3,img_addW, img_addW1, 
 #cv2.imshow('point processing - two images',pp4)
 
 #5 비선형 연산 : 감마연산
-#f = gray/255
-f = img/255     # 픽셀값을 0~1사이 실수로 변환
+f = gray/255
+#f = img/255     # 픽셀값을 0~1사이 실수로 변환
 img_gamma05 = np.uint8(255*(f**0.5)) # 감마 연산 :
 cv2.putText(img_gamma05,"gamma=0.5",(20,30),cv2.FONT_HERSHEY_PLAIN,1.5, (255,0,255), 2)
 img_gamma075 = np.uint8(255*(f**0.75))
@@ -64,7 +64,7 @@ cv2.putText(img_gamma20,"gamma=2.0",(20,30),cv2.FONT_HERSHEY_PLAIN,1.5, (255,0,2
 img_gamma30 = np.uint8(255*(f**3.0))
 cv2.putText(img_gamma30,"gamma=3.0",(20,30),cv2.FONT_HERSHEY_PLAIN,1.5, (255,0,255), 2)
 pp3=np.hstack((img_gamma05,img_gamma075,img_gamma10,img_gamma20,img_gamma30)) # hstack은 높이(세로)가 같아야 함
-#cv2.imshow('point processing - gamma',pp3)
+cv2.imshow('point processing - gamma',pp3)
 
 cv2.waitKey()
 cv2.destroyAllWindows()

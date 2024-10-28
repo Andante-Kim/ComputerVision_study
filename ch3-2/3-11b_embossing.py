@@ -10,8 +10,8 @@ gray16=np.int16(gray)              # int8로 음수를 표현하는 경우 -128~
 femboss1=np.array([[-1.0, 0.0, 0.0],
                   [ 0.0, 0.0, 0.0],
                   [ 0.0, 0.0, 1.0]])
-emboss1a = np.unit8(cv2.filter2D(gray16,-1,femboss1))
-emboss1b = np.unit8(cv2.filter2D(gray16,-1,femboss1)+128)
+emboss1a = np.uint8(cv2.filter2D(gray16,-1,femboss1))
+emboss1b = np.uint8(cv2.filter2D(gray16,-1,femboss1)+128)
 emboss1=np.uint8(np.clip(cv2.filter2D(gray16,-1,femboss1)+128,0,255))  # 0보다 작으면 0, 255보다 크면 255
 
 femboss2=np.array([[-1.0, -1.0, 0.0],

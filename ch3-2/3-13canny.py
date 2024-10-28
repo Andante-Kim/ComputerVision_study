@@ -11,7 +11,7 @@ sobel_x = cv2.convertScaleAbs(sobel_grad_x)
 sobel_y = cv2.convertScaleAbs(sobel_grad_y)
 sobel_edge = cv2.addWeighted(sobel_x,0.5,sobel_y,0.5,0)
 
-_, th = cv2.thresghold(sobel_edge, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU) # sobel edge에서 나온 값을 임계값으로 만들기(임계값 1개)
+_, th = cv2.threshold(sobel_edge, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU) # sobel edge에서 나온 값을 임계값으로 만들기(임계값 1개)
 
 # Canny : 다양한 임계값
 canny1=cv2.Canny(gray,50,150)	# Tlow=50, Thigh=150으로 설정

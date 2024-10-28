@@ -13,7 +13,7 @@ patch2=cv2.resize(patch,dsize=(0,0),fx=12,fy=12,interpolation=cv2.INTER_LINEAR)
 patch3=cv2.resize(patch,dsize=(0,0),fx=12,fy=12,interpolation=cv2.INTER_CUBIC)
 
 dst1=np.hstack((patch1,patch2,patch3))
-#cv2.imshow('Resize - zoomin',dst1)
+cv2.imshow('Resize - zoomin',dst1)
 
 # img_small0 = cv2.resize(img, dsize=(297, 198))
 img_small1 = cv2.resize(img, dsize=(0, 0), fx=0.25, fy=0.25, interpolation=cv2.INTER_NEAREST)  # 1/4로 축소

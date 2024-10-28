@@ -13,7 +13,7 @@ M45 = cv2.getRotationMatrix2D((cX, cY), 45, 1.0)   # 이미지의 중심을 중�
 rotated_45 = cv2.warpAffine(img, M45, (w, h))  # 회전 행렬을 이미지에 적용하여 이미지 회전시킴
 
 img_rotate=np.hstack((img,rotated_45))
-#cv2.imshow('Rotation', img_rotate)
+cv2.imshow('Rotation', img_rotate)
 
 # 회전 affine
 #90 rotate
