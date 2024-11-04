@@ -1,16 +1,16 @@
 import cv2
 import sys
 
-#img=cv2.imread('apples.jpg')
-img=cv2.imread('coins.png')
+img=cv2.imread('apples.jpg')
+#img=cv2.imread('coins.png')
 if img is None:
     sys.exit('파일을 찾을 수 없습니다.')
 
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 blur=cv2.blur(gray,(3,3))
 
-#circles=cv2.HoughCircles(blur,cv2.HOUGH_GRADIENT,1,200,param1=150,param2=20,minRadius=50,maxRadius=120)    # 허프 원 검출 ---②
-circles=cv2.HoughCircles(blur,cv2.HOUGH_GRADIENT,1,80,param1=150,param2=20,minRadius=20,maxRadius=40)
+circles=cv2.HoughCircles(blur,cv2.HOUGH_GRADIENT,1,200,param1=150,param2=20,minRadius=50,maxRadius=120)    # 허프 원 검출 ---②
+#circles=cv2.HoughCircles(blur,cv2.HOUGH_GRADIENT,1,80,param1=150,param2=20,minRadius=20,maxRadius=40)
 # method : 검출방법, HOUGH_GRADIENT
 # dp : 이미지해상도 : accumulator해상도, 1이면 두 해상도 같음
 # dist : 검출된 원 중심 사이의 최소 거리

@@ -19,8 +19,8 @@ while True:  # 무한루프로
     skin_mask = cv2.inRange(hsv_img, (0, 30, 0), (20, 180, 255))  # skin color 범위
     # 2 피부색 그대로
     img_skin = cv2.bitwise_and(frame, frame, mask=skin_mask)
-    #cv2.imshow('skin color detection', skin_mask)
-    cv2.imshow('skin color detection', img_skin)
+    cv2.imshow('skin color detection', skin_mask)
+    #cv2.imshow('skin color detection', img_skin)
 
     key = cv2.waitKey(1)
     if key == ord('q'):

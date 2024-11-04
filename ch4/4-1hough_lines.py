@@ -2,9 +2,9 @@ import cv2
 import sys
 import numpy as np
 
-img = cv2.imread('road2.jpg')
+#img = cv2.imread('road2.jpg')
 #img = cv2.imread('sudoku.png')
-#img = cv2.imread('check.png')
+img = cv2.imread('check.png')
 if img is None:
     sys.exit('파일을 찾을 수 없습니다.')
 
