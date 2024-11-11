@@ -1,7 +1,7 @@
 import cv2
 import sys
 
-cap = cv2.VideoCapture('duksung.mp4')    # 비디오 파일
+cap = cv2.VideoCapture('panorama.mp4')    # 비디오 파일
 if not cap.isOpened():
     sys.exit('동영상 연결 실패')
 
@@ -21,7 +21,7 @@ while True:
     frame = cv2.resize(frame, dsize=(0, 0), fx=0.5, fy=0.5)
     if i%STEP == 0:		# STEP 번째 프레임
         images.append(frame)
-        #cv2.imwrite('./stitch_images/stitch_img' + str(i) + '.png', frame)  # 이미지 캡처 및 저장
+        #cv2.imwrite('.\stitch_images\stitch_img'+'.png', frame)  # 이미지 캡처 및 저장
 
     cv2.imshow('Video display', frame)
 
@@ -32,6 +32,7 @@ while True:
 status, dst = stitcher.stitch(images)
 if status == cv2.STITCHER_OK:
     cv2.imshow('stitching',  dst)
+    cv2.imwrite('stiching.png', dst)
 
 cv2.waitKey()
 cap.release()  # 카메라와 연결을 끊음

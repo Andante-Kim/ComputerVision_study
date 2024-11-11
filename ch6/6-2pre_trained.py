@@ -1,13 +1,13 @@
-import keras
-from keras.applications.vgg16 import VGG16
-from keras.preprocessing.image import img_to_array
-from keras.applications.vgg16 import preprocess_input
-from keras.applications.vgg16 import decode_predictions
-from keras.preprocessing.image import load_img
+import tensorflow
+from tensorflow.keras.applications.vgg16 import VGG16
+from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.keras.applications.vgg16 import preprocess_input
+from tensorflow.keras.applications.vgg16 import decode_predictions
+from tensorflow.keras.preprocessing.image import load_img
 import numpy as np
 
 model = VGG16()
-image = load_img('elephant.jpg', target_size=(224,224))
+image = load_img('puppy.jpg', target_size=(224,224))
 
 image = img_to_array(image)
 image= image.reshape((1,image.shape[0], image.shape[1], image.shape[2]))

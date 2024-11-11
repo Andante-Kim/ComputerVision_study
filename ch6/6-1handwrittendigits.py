@@ -37,7 +37,7 @@ def recognition():
     # 테스트 데이터
     numerals=grab_numerals()
     numerals=numerals.reshape(5,28,28,1)    # 2차원
-    numerals=numerals.astype(np.float32)/255.0
+    numerals=numerals.astype(np.float32)/255.0 # 0~1 정규화
 
     # 예측
     res=model.predict(numerals)     # 학습 모델로 예측
